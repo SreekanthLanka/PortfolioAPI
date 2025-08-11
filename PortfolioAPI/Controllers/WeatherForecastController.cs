@@ -18,6 +18,7 @@ namespace PortfolioAPI.Controllers
             _logger = logger;
         }
 
+        // Sample Feature //
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

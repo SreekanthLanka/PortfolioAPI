@@ -30,5 +30,13 @@ namespace PortfolioAPI.Controllers
             })
             .ToArray();
         }
+        
+        [HttpGet(Name = "GetRandomNumber")]
+        public int GetRandomNumber()
+        {
+            int randomNumber2 = random.Next(100);
+            return randomNumber2;
+        }
+
     }
 }

@@ -38,5 +38,12 @@ namespace PortfolioAPI.Controllers
             return randomNumber2;
         }
 
+        [HttpGet(Name = "GetBiggestNumber")]
+        public int GetRandomNumber()
+        {
+            int biggestNumber = int.MaxValue;
+            return biggestNumber;
+        }
+
     }
 }

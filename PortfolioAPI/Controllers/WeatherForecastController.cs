@@ -45,5 +45,29 @@ namespace PortfolioAPI.Controllers
             return biggestNumber;
         }
 
+        [HttpGet(Name = "GetBiggestPrimeNumber")]
+        public int GetBiggestPrimeNumber()
+        {
+            int biggestPrimeNumber = 0;
+            for (int i = 2; i < int.MaxValue; i++)
+            {
+                if (IsPrime(i))
+                {
+                    biggestPrimeNumber = i;
+                }
+            }
+            return biggestPrimeNumber;
+        }
+
+        private bool IsPrime(int number)
+        {
+            if (number <= 1) return false;
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0) return false;
+            }
+            return true;
+        }
+
     }
 }

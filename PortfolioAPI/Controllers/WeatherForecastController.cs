@@ -69,5 +69,29 @@ namespace PortfolioAPI.Controllers
             return true;
         }
 
+        [HttpGet(Name = "GetBiggestOddNumber")]
+        public int GetBiggestOddNumber()
+        {
+            int biggestOddNumber = 0;
+            for (int i = 1; i < int.MaxValue; i += 2)
+            {
+                if (IsPrime(i))
+                {
+                    biggestOddNumber = i;
+                }
+            }
+            return biggestOddNumber;
+        }
+
+        private bool IsPrime(int number)
+        {
+            if (number <= 1) return false;
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0) return false;
+            }
+            return true;
+        }
+
     }
 }

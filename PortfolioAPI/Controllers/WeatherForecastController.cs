@@ -18,6 +18,7 @@ namespace PortfolioAPI.Controllers
             _logger = logger;
         }
 
+        // Sample Feature //
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -29,5 +30,13 @@ namespace PortfolioAPI.Controllers
             })
             .ToArray();
         }
+        
+        [HttpGet(Name = "GetRandomNumber")]
+        public int GetRandomNumber()
+        {
+            int randomNumber2 = random.Next(100);
+            return randomNumber2;
+        }
+
     }
 }
